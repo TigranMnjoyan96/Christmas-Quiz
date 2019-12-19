@@ -1,7 +1,8 @@
 import React, {Component} from "react"
-import './Game.scss'
+import './Game.css'
 import Modal from "./modal/Modal";
 import Finish from "../finish/Finish"
+import img1 from './gamesImg/valio 2 (1).png'
 
 export default class Game extends Component {
 
@@ -12,13 +13,13 @@ export default class Game extends Component {
         quiz: [
             {
                 id: 0,
-                question: 'Ո՞վ է եղել Կարա Բալան',
+                question: 'Նշվածներից ո՞րն է ամենահայտնի ամանօրյա աղցանը',
                 rightAnswer: 2,
-                url: 'https://prodigi.am/apps/yerevan2800/assets/uploads/images/c0770-question_1.jpg',
+                url: img1,
                 answers: [
-                    {id: 0, text: 'սովորական մուրացկան, ով թափառում էր Երևանի փողոցներով ', sty: '#9575cd deep-purple lighten-2'},
-                    {id: 1, text: 'պիեսի հերոս, ով քայլում էր Երևանի փողոցներով և բարձր ասմունքում', sty: '#9575cd deep-purple lighten-2'},
-                    {id: 2, text: 'ծաղկավաճառ, ով, լեգենդի համաձայն, անցորդներին ծաղիկ էր վաճառում կամ նվիրում', sty: '#9575cd deep-purple lighten-2'}
+                    {id: 0, text: 'Մայրաքաղաքային'},
+                    {id: 1, text: 'Թաղային'},
+                    {id: 2, text: 'Փողոցային'}
                 ]
             },
             {
@@ -29,11 +30,11 @@ export default class Game extends Component {
                 url: 'https://prodigi.am/apps/yerevan2800/assets/uploads/images/69292-question_2.jpg',
                 answers: [
                     {id: 0, text: 'Ա)\t\n' +
-                            'Հիսուսի օրհնող ձեռքերը ', sty: '#9575cd deep-purple lighten-2'},
+                            'Հիսուսի օրհնող ձեռքերը '},
                     {id: 1, text: 'Բ)\t\n' +
-                            'Շաբաթվա օրերը հաշվարկող ձեռքերը', sty: '#9575cd deep-purple lighten-2'},
+                            'Շաբաթվա օրերը հաշվարկող ձեռքերը'},
                     {id: 2, text: 'Գ)\t\n' +
-                            'Արվեստի երիտասարդ նվիրյալներին ծափահարող ձեռքերը', sty: '#9575cd deep-purple lighten-2'}
+                            'Արվեստի երիտասարդ նվիրյալներին ծափահարող ձեռքերը'}
                 ]
             },
             {
@@ -43,13 +44,13 @@ export default class Game extends Component {
                 url: 'https://prodigi.am/apps/yerevan2800/assets/uploads/images/65d14-question_3.jpg',
                 answers: [
                     {id: 0, text: 'Ա)\t\n' +
-                            'Մելանխոլիա', sty: '#9575cd deep-purple lighten-2'},
+                            'Մելանխոլիա'},
                     {id: 1, text: 'Բ)\t\n' +
-                            'էպիդեմիա', sty: '#9575cd deep-purple lighten-2'},
+                            'էպիդեմիա'},
                     {id: 2, text: '\n' +
                             'Գ)\t\n' +
                             'Ինսոմնիա\n' +
-                            '\n', sty: '#9575cd deep-purple lighten-2'}
+                            '\n',}
                 ]
             }
         ]
@@ -57,16 +58,7 @@ export default class Game extends Component {
     }
 
     answerHandler = e => {
-        console.log(e, this.state.quiz[this.state.activeQuestion].rightAnswer)
-        if(e.id === this.state.quiz[this.state.activeQuestion].rightAnswer) {
-            e.sty = '#66bb6a green lighten-1'
-        } else {
-            e.sty = '#c62828 red darken-3'
-        }
 
-        this.setState({
-            rightModal: true
-        })
     }
     nextQuestionHandler = () => {
         this.setState({
@@ -79,34 +71,32 @@ export default class Game extends Component {
 
     }
     render() {
-        console.log(this.props.next)
         const {quiz, activeQuestion, rightModal, wrongModal} = this.state
         return(
             <>{!this.state.finish ?
-                <div className={'questions'}>
-                    <div className="col s12 m7">
-                        <h2 className="header">{quiz[activeQuestion].question}</h2>
-                        <div className="card horizontal">
-                            <div className="card-image">
-                                <img src={quiz[activeQuestion].url} />
-                            </div>
-                            <div className="card-stacked">
-                                <div className="card-content">
-                                    <ul>
-                                        {quiz[activeQuestion].answers.map(j => {
-                                            return(
-
-                                                <li onClick={this.answerHandler.bind(this, j)} className={j.sty}>{j.text}</li>
-                                            )
-                                        })}
-                                    </ul>
+                <div className={'questionOne'}>
+                    <div className={'questOne'}>
+                        {quiz[activeQuestion].answers.map(j => {
+                            return(
+                                <div >
+                                    <form action=''>
+                                        <p onClick={this.answerHandler.bind(this, j)}>
+                                            <div className={'circlediv'}>
+                                                <label className="container">
+                                                    <input type="radio" name="radio" />
+                                                    <span className="checkmark"></span>
+                                                </label>
+                                            </div>
+                                            <span className={'answer'}>{j.text}</span>
+                                        </p>
+                                    </form>
                                 </div>
+                            )
+                        })}
+                    </div>
 
-                            </div>
-                        </div>
-                        <div className={'position'}>
-                            {rightModal ? <Modal next={this.nextQuestionHandler} /> : null}
-                        </div>
+                    <div className={'position'}>
+                        {rightModal ? <Modal next={this.nextQuestionHandler} /> : null}
                     </div>
                 </div> : <Finish />
             }

@@ -15,9 +15,14 @@ class App extends React.Component {
     }
     render() {
         return (
-            <div className="container">
-                {!this.state.play ? <button className={'waves-effect waves-light btn'}
-                                            onClick={this.start}>Start</button> :
+            <div className="containers">
+                {!this.state.play ?
+                    <div className={'background'}>
+                        <button className={'startGame'}
+                                onClick={this.start}>սկսել խաղը</button>
+                        <button className={'rules'}>կանոններ
+                        </button>
+                    </div>  :
                     <Game />
                 }
             </div>
