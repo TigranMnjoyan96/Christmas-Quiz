@@ -1,0 +1,120 @@
+/* The container */
+.containersix {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.containersix input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmarksix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 54px;
+    width: 54px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.containersix:hover input ~ .checkmarksix {
+    background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.containersix input:checked ~ .checkmarksix {
+    background-color:#ebecef;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmarksix:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.containersix input:checked ~ .checkmarksix:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.containersix .checkmarksix:after {
+    top: 14px;
+    left: 14px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: orange;
+}
+.questionOnesix {
+    background-image: url("../gamesImg/valio 2 (2).png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height:100vh;
+    position: relative;
+    z-index: 1;
+}
+.questOnesix .diviksix {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+.questOnesix{
+    position: absolute;
+    top: 27%;
+    left: 30%;
+
+
+}
+.answersix{
+    margin-left: 50px;
+    font-size: 30px;
+    font-weight: lighter;
+    width: 80%;
+    border: 1px solid #ebecef;
+    padding: 19px 30px;
+    color:#002f6d;
+}
+.radiocontsix{
+    padding:12px 30px 14px 11px;;
+    border: 1px solid #ebecef;
+}
+.Siquestion{
+    top:5%;
+
+    font-size: 30px;
+    color: #002f6d;
+    left: 30%;
+    position: absolute;
+}
+.Siquestion1{
+
+    font-size: 30px;
+    color: #002f6d;
+    left: 30%;
+    top: 15%;
+    position: absolute;
+}
+.Siquestion2{
+
+    font-size: 30px;
+    color: #002f6d;
+    left: 30%;
+    top: 25%;
+    position: absolute;
+}

@@ -6,6 +6,11 @@ import Finish from "../finish/Finish"
 import QuestionThree from "./questionThree/QuestionThree";
 import QuestionFour from "./questionFour/QuestionFour";
 import QuestionFive from "./QuestionFive/QuestionFive";
+import QuestionSix from "./questionSix/QuestionSix";
+import QuestionSeven from "./questionSeven/QuestionSeven";
+import QuestionEight from "./questionEight/QuestionEight";
+import QuestionNine from "./questionNine/QuestionNine";
+import LastQuestion from "./lastQuestion/LastQuestion";
 
 export default class Game extends Component {
 
@@ -294,13 +299,18 @@ export default class Game extends Component {
         const {quiz, rightModal, wrongModal, questionPage,points} = this.state;
         return(
             <>
-                {questionPage === 0 ? <FirstQuestion question={quiz[0]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                questionPage === 1 ? <SecondQuestion question={quiz[1]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                questionPage === 2 ? <QuestionThree question={quiz[2]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                questionPage === 3 ? <QuestionFour question={quiz[3]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                questionPage === 4 ? <QuestionFive question={quiz[4]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/>
-
-                    : <Finish points={points}/>
+                {
+                        questionPage === 0 ? <FirstQuestion question={quiz[0]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 1 ? <SecondQuestion question={quiz[1]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 2 ? <QuestionThree question={quiz[2]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 3 ? <QuestionFour question={quiz[3]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 4 ? <QuestionFive question={quiz[4]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 5 ? <QuestionSix question={quiz[5]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 6 ? <QuestionSeven question={quiz[6]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 7 ? <QuestionEight question={quiz[7]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 8 ? <QuestionNine question={quiz[8]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 9 ? <LastQuestion question={quiz[9]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/>
+                        : <Finish points={points}/>
             }
 
             </>
