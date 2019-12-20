@@ -1,13 +1,13 @@
 import React from "react"
-import './Modal.scss'
+import './WrongModal.css'
 
 function Modal({wrong}) {
 
 
     return (
         <>
-            <div className={'rightall'}>
-                <div className={'rightModal'}></div>
+            <div className={'wrongall'}>
+                <div className={'wrongModal'}></div>
                 <button className={'closemodal'} onClick={wrong}>x</button>
             </div>
 

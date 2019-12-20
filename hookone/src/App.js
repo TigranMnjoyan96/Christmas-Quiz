@@ -1,16 +1,29 @@
 import React from 'react'
 import './App.css'
 import Game from "./game/Game";
+import Rules from "./rules/Rules";
 
 
 class App extends React.Component {
     state = {
-        play: false
+        play: false,
+        rules:false
     }
 
     start = () => {
         this.setState({
-            play: true
+            play: true,
+            rules:false
+        })
+    }
+    rulesHandler = () =>{
+        this.setState({
+            rules:true
+        })
+    }
+    closeRulesHandler = () =>{
+        this.setState({
+            rules:false
         })
     }
     render() {
@@ -20,8 +33,11 @@ class App extends React.Component {
                     <div className={'background'}>
                         <button className={'startGame'}
                                 onClick={this.start}>սկսել խաղը</button>
-                        <button className={'rules'}>կանոններ
+                        <button className={'rules'}
+                                onClick={this.rulesHandler}
+                        >կանոններ
                         </button>
+                        {this.state.rules ? <Rules closepopup={this.closeRulesHandler}/> : null}
                     </div>  :
                     <Game />
                 }

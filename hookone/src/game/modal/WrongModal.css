@@ -1,0 +1,24 @@
+.wrongModal{
+    background-image: url("./wronanswerimg/valio 4.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    top:0;
+    height: 702px;
+    z-index: 2;
+    position: absolute;
+    left: 0%;
+}
+.wrongall{
+    position: relative;
+}
+.closemodal{
+    position: absolute;
+    right: 10%;
+    margin-top: 66px;
+    z-index: 2;
+    background: #feaf00;
+    color: white;
+    font-size: 25px;text-align: center;
+    padding: 0px 12px 6px 12px;
+}

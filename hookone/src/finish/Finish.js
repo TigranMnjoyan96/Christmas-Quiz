@@ -1,9 +1,18 @@
 import React from "react"
-
-export default () => {
+import './Finish.css'
+export default ({points}) => {
     return(
-        <div>
-            <h1>Finish</h1>
-        </div>
+
+            <div className={'finish'}>
+                <p>Դու հավաքեցիք  <span>{points}</span>  միավոր</p>
+                <div >
+                    <button className={'share'}>կիսվել</button>
+                    <button className={'leaders'}>առաջատարներ
+                    </button>
+                </div>
+            </div>
+
+
+
     )
 }

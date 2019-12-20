@@ -1,0 +1,47 @@
+.finish{
+    background-image: url("./finishimg/finish.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+.finish p{
+    position: absolute;
+    top: 24%;
+    left: 17%;
+    letter-spacing: 2px;
+    font-size: 75px;
+    color: #002f6d;
+}
+.finish p span{
+    font-size: 100px;
+    font-weight: bold;
+
+}
+.share{
+    position: absolute;
+    bottom: 7%;
+    right: 7%;
+    width: 320px;
+    height: 60px;
+    font-size: 36px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    background: #feaf00;
+    cursor: pointer;
+    color: white;
+}
+.leaders{
+    position: absolute;
+    bottom: 17%;
+    right: 7%;
+    width: 320px;
+    height: 60px;
+    font-size: 36px;
+    text-transform: uppercase;
+    border: 1px solid black;
+    background: #feaf00;
+    cursor: pointer;
+    color: white;
+}
