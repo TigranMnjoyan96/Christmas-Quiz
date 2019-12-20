@@ -3,7 +3,7 @@ import Modal from "../modal/Modal";
 import WrongModal from "../modal/WrongModal";
 import './QuestionSix.css'
 
-export default ({question,answer, right,questionPage,wrong,wrongmod})=>{
+export default ({question,answer, right,questionPage,wrong,wrongmod,description})=>{
     return(
         <div className={'quizsix'}>
 
@@ -34,7 +34,7 @@ export default ({question,answer, right,questionPage,wrong,wrongmod})=>{
                 </div>
 
                 {right ? <Modal questionPage = {questionPage} wrong = {wrong} right = {right}/>: wrongmod ?
-                    <WrongModal questionPage = {questionPage} wrong = {wrong} right = {right}/>:null}
+                    <WrongModal  description={description} questionPage = {questionPage} wrong = {wrong} right = {right}/>:null}
             </div>
         </div>
 

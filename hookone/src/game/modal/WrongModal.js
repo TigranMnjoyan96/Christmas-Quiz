@@ -1,7 +1,7 @@
 import React from "react"
 import './WrongModal.css'
 
-function Modal({wrong}) {
+function Modal({wrong,description}) {
 
 
     return (
@@ -9,6 +9,7 @@ function Modal({wrong}) {
             <div className={'wrongall'}>
                 <div className={'wrongModal'}></div>
                 <button className={'closemodal'} onClick={wrong}>x</button>
+                <div className={'description'}>{description}</div>
             </div>
 
 
