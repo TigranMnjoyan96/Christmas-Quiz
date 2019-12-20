@@ -8,7 +8,7 @@ function Modal({closepopup}) {
         <>
             <div className={'rule'}>
                 <div className={'ruleModal'}></div>
-                <button className={'closemodal'} onClick={closepopup} >x</button>
+                <button className={'rulesclosemodal'} onClick={closepopup} >x</button>
             </div>
 
 

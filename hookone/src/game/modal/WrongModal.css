@@ -15,12 +15,12 @@
 .closemodal{
     position: absolute;
     right: 10%;
-    margin-top: 66px;
+    margin-top: 80vh;
     z-index: 2;
     background: #feaf00;
     color: white;
-    font-size: 25px;text-align: center;
-    padding: 0px 12px 6px 12px;
+    font-size: 30px;text-align: center;
+    padding:5px 15px;
 }
 .description {
     position: absolute;
