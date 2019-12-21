@@ -61,8 +61,8 @@
     border-radius: 50%;
     background: orange;
 }
-.questionOne {
-    background-image: url("../gamesImg/valio 2 (2).png");
+.questionNine {
+    background-image: url("../gamesImg/questNine.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height:100vh;
@@ -95,7 +95,7 @@
     border: 1px solid #ebecef;
 }
 .Niquestion{
-    top:5%;
+    top:15%;
     font-size: 30px;
     color: #002f6d;
     left: 30%;
@@ -106,7 +106,7 @@
     font-size: 30px;
     color: #002f6d;
     left: 30%;
-    top: 15%;
+    top: 20%;
     position: absolute;
 }
 .Niquestion2{

@@ -61,8 +61,8 @@
     border-radius: 50%;
     background: orange;
 }
-.questionOne {
-    background-image: url("../gamesImg/valio 2 (2).png");
+.questionFour {
+    background-image: url("../gamesImg/questFour.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height:100vh;
@@ -95,18 +95,18 @@
     border: 1px solid #ebecef;
 }
 .Foquestion{
-    top:5%;
+    top:15%;
 
-    font-size: 50px;
+    font-size: 30px;
     color: #002f6d;
     left: 30%;
     position: absolute;
 }
 .Foquestion1{
 
-    font-size: 50px;
+    font-size: 30px;
     color: #002f6d;
     left: 30%;
-    top: 15%;
+    top: 20%;
     position: absolute;
 }

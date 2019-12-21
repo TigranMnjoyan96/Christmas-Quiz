@@ -61,8 +61,8 @@
     border-radius: 50%;
     background: orange;
 }
-.questionOne {
-    background-image: url("../gamesImg/valio 2 (2).png");
+.questionThree {
+    background-image: url("../gamesImg/questTwo.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height:100vh;
@@ -83,7 +83,7 @@
 }
 .answer{
     margin-left: 50px;
-    font-size: 55px;
+    font-size: 30px;
     font-weight: lighter;
     width: 80%;
     border: 1px solid #ebecef;
@@ -95,18 +95,18 @@
     border: 1px solid #ebecef;
 }
 .Squestion{
-    top:5%;
+    top:15%;
 
-    font-size: 50px;
+    font-size: 30px;
     color: #002f6d;
     left: 30%;
     position: absolute;
 }
 .Squestion1{
 
-    font-size: 50px;
+    font-size: 30px;
     color: #002f6d;
     left: 30%;
-    top: 15%;
+    top: 20%;
     position: absolute;
 }

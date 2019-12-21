@@ -62,7 +62,7 @@
     background: orange;
 }
 .questionOnesix {
-    background-image: url("../gamesImg/valio 2 (2).png");
+    background-image: url("../gamesImg/questSix.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height:100vh;
@@ -95,7 +95,7 @@
     border: 1px solid #ebecef;
 }
 .Siquestion{
-    top:5%;
+    top:15%;
 
     font-size: 30px;
     color: #002f6d;
@@ -107,7 +107,7 @@
     font-size: 30px;
     color: #002f6d;
     left: 30%;
-    top: 15%;
+    top: 20%;
     position: absolute;
 }
 .Siquestion2{

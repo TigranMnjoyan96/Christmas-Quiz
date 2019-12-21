@@ -3,10 +3,10 @@ import Modal from "../modal/Modal";
 import WrongModal from "../modal/WrongModal";
 import './QuestionSix.css'
 
-export default ({question,answer, right,questionPage,wrong,wrongmod,description})=>{
+export default ({question,answer, right,questionPage,wrong,wrongmod,description,points})=>{
     return(
         <div className={'quizsix'}>
-
+            <h2 className={'pointThrough'}>Միավոր {points}</h2>
             <div className={'questionOnesix'}>
                 <div>
                     <span className={'Siquestion'}>{question.question1}</span>

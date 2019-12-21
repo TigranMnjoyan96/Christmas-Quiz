@@ -187,7 +187,7 @@ export default class Game extends Component {
                wrongModal:true,
 
            })
-           console.log(this.state.wrongModal)
+
        }
         if(this.state.questionPage === 2 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
@@ -314,11 +314,13 @@ export default class Game extends Component {
             rightModal: false,
             wrongModal:false,
         })
-        return this.componentDidMount()
+        console.log(this.state.finish)
 
-        if(this.state.questionPage === this.state.quiz.length / 2) {
+        if(this.state.questionPage === this.state.quiz.length ) {
             this.setState({finish: true})
         }
+        return this.componentDidMount()
+
 
     }
 
@@ -326,17 +328,19 @@ export default class Game extends Component {
 componentDidMount() {
     const timer = setInterval(() => {
 
-        if (this.state.answerTime){
+        if (this.state.answerTime || this.state.finish){
             clearInterval(timer)
         }else{
             this.setState({
                 time:++this.state.time
             })
-             if(this.state.time%60==0){
+            if(this.state.time/60==1){
                 this.setState({
-                    time1:++this.state.time1
+                    time1:++this.state.time1,
+                    time:0
                 })
             }
+
         }
     }, 1000)
 }
@@ -348,18 +352,18 @@ componentDidMount() {
         const {quiz, rightModal, wrongModal, questionPage,points} = this.state;
         return(
             <>
-                <h1><span>{this.state.time1}</span>:<span>{this.state.time}</span></h1>
+                <h2 className={'timerik'}>Ժամանակ <span>{this.state.time1}</span>:<span>{this.state.time}</span></h2>
                 {
-                        questionPage === 0 ? <FirstQuestion description={quiz[0].description} question={quiz[0]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 1 ? <SecondQuestion description={quiz[1].description} question={quiz[1]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 2 ? <QuestionThree description={quiz[2].description} question={quiz[2]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 3 ? <QuestionFour description={quiz[3].description} question={quiz[3]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 4 ? <QuestionFive description={quiz[4].description} question={quiz[4]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 5 ? <QuestionSix  description={quiz[5].description} question={quiz[5]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 6 ? <QuestionSeven description={quiz[6].description} question={quiz[6]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 7 ? <QuestionEight description={quiz[7].description} question={quiz[7]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 8 ? <QuestionNine description={quiz[8].description} question={quiz[8]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
-                        questionPage === 9 ? <LastQuestion description={quiz[9].description} question={quiz[9]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/>
+                        questionPage === 0 ? <FirstQuestion points={points} description={quiz[0].description} question={quiz[0]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 1 ? <SecondQuestion points={points} description={quiz[1].description} question={quiz[1]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 2 ? <QuestionThree points={points} description={quiz[2].description} question={quiz[2]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 3 ? <QuestionFour points={points} description={quiz[3].description} question={quiz[3]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 4 ? <QuestionFive points={points} description={quiz[4].description} question={quiz[4]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 5 ? <QuestionSix points={points} description={quiz[5].description} question={quiz[5]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 6 ? <QuestionSeven points={points} description={quiz[6].description} question={quiz[6]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 7 ? <QuestionEight points={points} description={quiz[7].description} question={quiz[7]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 8 ? <QuestionNine points={points} description={quiz[8].description} question={quiz[8]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
+                        questionPage === 9 ? <LastQuestion points={points} description={quiz[9].description} question={quiz[9]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/>
                         : <Finish points={points}/>
             }
 

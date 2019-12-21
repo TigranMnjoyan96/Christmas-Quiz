@@ -3,11 +3,11 @@ import Modal from "../modal/Modal";
 import WrongModal from "../modal/WrongModal";
 import './LastQuestion.css'
 
-export default ({question,answer, right,questionPage,wrong,wrongmod,description})=>{
+export default ({question,answer, right,questionPage,wrong,wrongmod,description,points})=>{
     return(
         <div className={'quiz'}>
-
-            <div className={'questionOne'}>
+            <h2 className={'pointThrough'}>Միավոր {points}</h2>
+            <div className={'questionTen'}>
                 <div>
                     <span className={'Laquestion'}>{question.question1}</span>
                     <span className={'Laquestion1'}>{question.question2}</span>

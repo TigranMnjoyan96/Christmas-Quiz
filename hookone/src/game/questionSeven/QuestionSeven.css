@@ -61,8 +61,8 @@
     border-radius: 50%;
     background: orange;
 }
-.questionOne {
-    background-image: url("../gamesImg/valio 2 (2).png");
+.questionSeven {
+    background-image: url("../gamesImg/questSeven.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     height:100vh;
@@ -95,18 +95,18 @@
     border: 1px solid #ebecef;
 }
 .Sequestion{
-    top:5%;
+    top:15%;
 
-    font-size: 50px;
+    font-size: 30px;
     color: #002f6d;
     left: 30%;
     position: absolute;
 }
 .Sequestion1{
 
-    font-size: 50px;
+    font-size: 30px;
     color: #002f6d;
     left: 30%;
-    top: 15%;
+    top: 20%;
     position: absolute;
 }

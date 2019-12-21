@@ -1,1 +1,10 @@
-
+.timerik{
+    color:orangered;
+    border: 2px solid #ebecef;
+    width: 15%;
+    text-align: center;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 2;
+    right: 3%;
+}
