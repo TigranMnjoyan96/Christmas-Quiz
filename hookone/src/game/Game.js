@@ -332,7 +332,11 @@ componentDidMount() {
             this.setState({
                 time:++this.state.time
             })
-
+             if(this.state.time%60==0){
+                this.setState({
+                    time1:++this.state.time1
+                })
+            }
         }
     }, 1000)
 }
