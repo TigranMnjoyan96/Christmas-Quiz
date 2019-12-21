@@ -7,7 +7,8 @@ import Rules from "./rules/Rules";
 class App extends React.Component {
     state = {
         play: false,
-        rules:false
+        rules:false,
+        time:0
     }
 
     start = () => {
@@ -39,7 +40,7 @@ class App extends React.Component {
                         </button>
                         {this.state.rules ? <Rules closepopup={this.closeRulesHandler}/> : null}
                     </div>  :
-                    <Game />
+                    <Game start={this.start} />
                 }
             </div>
         )

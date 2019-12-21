@@ -19,7 +19,8 @@
     z-index: 2;
     background: #feaf00;
     color: white;
-    font-size: 30px;text-align: center;
+    font-size: 30px;
+    text-align: center;
     padding:5px 15px;
 }
 .description {

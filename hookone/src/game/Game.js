@@ -20,6 +20,9 @@ export default class Game extends Component {
         rightModal: false,
         wrongModal:false,
         finish: false,
+        time:0,
+        time1:0,
+        answerTime:false,
         quiz: [
             {
                 id: 0,
@@ -152,30 +155,35 @@ export default class Game extends Component {
                 ]
             },
 
-        ]
-
+        ],
     }
+
+
 
     answerHandler = e => {
         if(this.state.questionPage === 0 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
        if(this.state.questionPage === 1 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true
             })
         }
        else{
            this.setState({
+               answerTime:true,
                wrongModal:true,
 
            })
@@ -183,96 +191,112 @@ export default class Game extends Component {
        }
         if(this.state.questionPage === 2 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 3 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 4 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 5 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 6 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 7 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 8 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
         }
         if(this.state.questionPage === 9 && e.id === this.state.quiz[this.state.questionPage].rightAnswer){
             this.setState({
+                answerTime:true,
                 rightModal:true,
                 wrongModal:false
             })
         }
         else{
             this.setState({
+                answerTime:true,
                 wrongModal:true,
 
             })
@@ -286,19 +310,41 @@ export default class Game extends Component {
     nextQuestionHandler = () => {
         this.setState({
             questionPage: ++this.state.questionPage,
+            answerTime:false,
             rightModal: false,
-            wrongModal:false
+            wrongModal:false,
         })
+        return this.componentDidMount()
 
         if(this.state.questionPage === this.state.quiz.length / 2) {
             this.setState({finish: true})
         }
 
     }
+
+
+componentDidMount() {
+    const timer = setInterval(() => {
+
+        if (this.state.answerTime){
+            clearInterval(timer)
+        }else{
+            this.setState({
+                time:++this.state.time
+            })
+
+        }
+    }, 1000)
+}
+
+
     render() {
+
+
         const {quiz, rightModal, wrongModal, questionPage,points} = this.state;
         return(
             <>
+                <h1><span>{this.state.time1}</span>:<span>{this.state.time}</span></h1>
                 {
                         questionPage === 0 ? <FirstQuestion description={quiz[0].description} question={quiz[0]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
                         questionPage === 1 ? <SecondQuestion description={quiz[1].description} question={quiz[1]} wrongmod={wrongModal} right={rightModal} wrong = {this.nextQuestionHandler} answer={this.answerHandler} questionPage = {questionPage}/> :
