@@ -7,9 +7,10 @@ function Modal({wrong,description}) {
     return (
         <>
             <div className={'wrongall'}>
-                <div className={'wrongModal'}></div>
-                <button className={'closemodal'} onClick={wrong}>Հաջորդը <i className="fa fa-arrow-right"></i></button>
-                <div className={'description'}>{description}</div>
+                <div className={'wrongModal'}>
+                    <div className={'description'}>{description}</div>
+                    <button className={'closemodal'} onClick={wrong}>Հաջորդը <i className="fa fa-arrow-right"></i></button>
+                </div>
             </div>
 
 

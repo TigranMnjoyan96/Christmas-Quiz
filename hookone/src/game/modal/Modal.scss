@@ -3,9 +3,9 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 100%;
-  top:0;
-  height: 702px;
-  z-index: 2;
+  top: 90px;
+  height: 80vh;
+  z-index: 3;
   position: absolute;
   left: 0%;
 }
@@ -15,11 +15,23 @@
 .closemodal{
   position: absolute;
   right: 10%;
-  margin-top: 63vh;
-  z-index: 2;
+  margin-top: 67vh;
+  z-index: 3;
   background: #feaf00;
   color: white;
   font-size: 30px;
   text-align: center;
   padding:5px 15px;
+}
+.description {
+  position: absolute;
+  width: 50%;
+  right: 25%;
+  background: #002f6d;
+  color: white;
+  margin-top: 400px;
+  padding: 20px;
+  z-index: 3;
+  font-size: 22px;
+  text-align: center;
 }

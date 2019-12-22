@@ -32,7 +32,7 @@ export default ({question,answer, right,questionPage,wrong,wrongmod,description,
                     })}
                 </div>
 
-                {right ? <Modal questionPage = {questionPage} wrong = {wrong} right = {right}/>: wrongmod ?
+                {right ? <Modal description={description} questionPage = {questionPage} wrong = {wrong} right = {right}/>: wrongmod ?
                     <WrongModal  description={description} questionPage = {questionPage} wrong = {wrong} right = {right}/>:null}
             </div>
         </div>
