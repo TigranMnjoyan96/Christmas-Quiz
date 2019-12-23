@@ -45,3 +45,40 @@
     cursor: pointer;
     color: white;
 }
+.Leader{
+    display: none;
+}
+.LeaderB{
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("./finishimg/arajatarner.png");
+    background-size: 100% 100%;
+    z-index: 9;
+}
+.Table{
+    width: 50%;
+    height: 200px;
+    background-color: red;
+    margin: 0 auto;
+}
+table{
+    margin: 0 auto;
+    border: 2px solid white;
+    position: absolute;
+    top: 15%;
+    left: 22%;
+}
+tr>td{
+    border-bottom: 2px solid white;
+    font-size: 40px;
+    color: #002F6D;
+}
+.leaderstitle {
+    position: absolute;
+    top: 1%;
+    left: 35%;
+}
+.leaderstitle h2 {
+    color: #002F6D;
+}
